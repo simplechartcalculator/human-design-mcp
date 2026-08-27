@@ -1,0 +1,54 @@
+{
+  "manifest_version": "0.2",
+  "name": "simplechart-human-design",
+  "display_name": "Human Design — Simple Chart Calculator",
+  "version": "1.0.0",
+  "description": "Human Design charts, cycles, transits, synthesis & chart comparison — ask in plain language.",
+  "long_description": "Adds Human Design to your AI. Once installed, just ask in plain language — for example: \"Calculate the Human Design chart for 9 April 1948, 00:05, Montreal\" — and the assistant returns the full bodygraph: type, authority, profile, centers, channels and every planet. Also does planetary cycles, live transits, a plain-language synthesis, and connection analysis between two people. Powered by simplechartcalculator.com.\n\nSETUP: after installing, paste your API key in the field below. Don't have one? Get a free key at simplechartcalculator.com/register (takes 30 seconds). Keep the key private — it counts against your plan.",
+  "author": {
+    "name": "Simple Chart Calculator",
+    "url": "https://simplechartcalculator.com"
+  },
+  "homepage": "https://simplechartcalculator.com/mcp",
+  "documentation": "https://simplechartcalculator.com/mcp",
+  "support": "mailto:hello@simplechartcalculator.com",
+  "license": "MIT",
+  "keywords": ["human-design", "bodygraph", "astrology", "mcp", "chart"],
+  "server": {
+    "type": "node",
+    "entry_point": "index.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/index.mjs"],
+      "env": {
+        "SCC_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "tools": [
+    { "name": "calculate_chart", "description": "Full bodygraph chart from birth data — type, authority, profile, centers, channels, planets." },
+    { "name": "get_synthesis", "description": "Plain-language interpretation of a chart." },
+    { "name": "calculate_cycle", "description": "Planetary returns — Solar, Saturn, Uranus, Chiron." },
+    { "name": "get_transit", "description": "Current planetary transits for any moment." },
+    { "name": "compare_charts", "description": "Connection analysis between two people." },
+    { "name": "save_person", "description": "Save a person's birth data to the local roster." },
+    { "name": "get_person", "description": "Recall a saved person by name." },
+    { "name": "list_people", "description": "List everyone saved in the roster." },
+    { "name": "remove_person", "description": "Remove a saved person." }
+  ],
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "Your API Key",
+      "description": "Paste your Simple Chart Calculator API key here. No key yet? Get a free one at simplechartcalculator.com/register. Keep it private — it counts against your plan.",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

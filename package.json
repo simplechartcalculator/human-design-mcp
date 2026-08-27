@@ -1,0 +1,39 @@
+{
+  "name": "@simplechart/mcp",
+  "version": "1.0.0",
+  "description": "Human Design MCP server — 9 tools: charts, cycles, synthesis, transits, chart comparison & a local people roster. For Claude, Cursor, or any MCP client. Powered by Simple Chart Calculator.",
+  "type": "module",
+  "bin": {
+    "simplechart-mcp": "index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "human-design",
+    "mcp",
+    "model-context-protocol",
+    "bodygraph",
+    "astrology",
+    "claude",
+    "cursor"
+  ],
+  "author": "Simple Chart Calculator",
+  "license": "MIT",
+  "homepage": "https://simplechartcalculator.com/mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplechartcalculator/human-design-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simplechartcalculator/human-design-mcp/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.8"
+  }
+}
